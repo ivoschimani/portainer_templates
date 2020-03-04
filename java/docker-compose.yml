@@ -1,0 +1,36 @@
+version: '2'
+
+services:
+  service:
+    image: ${PROJECT_IMAGE}
+    restart: unless-stopped
+    ports:
+      - "8080"
+  admin:
+    image: "phpmyadmin/phpmyadmin:4.8.3"
+    restart: unless-stopped
+    environment:
+      - PMA_HOST=${COMPOSE_PROJECT_NAME}_mariadb
+    links:
+      - ${COMPOSE_PROJECT_NAME}_mariadb:${COMPOSE_PROJECT_NAME}_mariadb
+    ports:
+      - "80"
+
+  mariadb:
+    image: "mariadb:10.3.7"
+    restart: unless-stopped
+     volumes:
+       - ${COMPOSE_PROJECT_NAME}_db_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - TZ=Europe/Berlin
+      - MYSQL_ALLOW_EMPTY_PASSWORD=no
+      - MYSQL_RANDOM_ROOT_PASSWORD=no
+    ports:
+      - "3306"
+
+volumes:
+  ${COMPOSE_PROJECT_NAME}_db_data
