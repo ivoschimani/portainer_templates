@@ -2,25 +2,26 @@ version: '2'
 
 services:
   service:
+    container_name: ${PROJECT_NAME}.service.${PROJECT_NAME}-sloppy.sloopy.node.intern
     image: ${PROJECT_IMAGE}
     restart: unless-stopped
     ports:
       - "8080"
   admin:
+    container_name: phpmyadmin.admin.${PROJECT_NAME}-sloppy.sloopy.node.intern
     image: "phpmyadmin/phpmyadmin:4.8.3"
     restart: unless-stopped
     environment:
-      - PMA_HOST=${COMPOSE_PROJECT_NAME}_mariadb
+      - PMA_HOST=mariadb.database.${PROJECT_NAME}-sloppy.sloopy.node.intern
     links:
-      - ${COMPOSE_PROJECT_NAME}_mariadb:${COMPOSE_PROJECT_NAME}_mariadb
+      - mariadb:mariadb.database.${PROJECT_NAME}-sloppy.sloopy.node.intern
     ports:
       - "80"
 
   mariadb:
+    container_name: mariadb.database.${PROJECT_NAME}-sloppy.sloopy.node.intern
     image: "mariadb:10.3.7"
     restart: unless-stopped
-     volumes:
-       - ${COMPOSE_PROJECT_NAME}_db_data:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
@@ -31,6 +32,3 @@ services:
       - MYSQL_RANDOM_ROOT_PASSWORD=no
     ports:
       - "3306"
-
-volumes:
-  ${COMPOSE_PROJECT_NAME}_db_data
