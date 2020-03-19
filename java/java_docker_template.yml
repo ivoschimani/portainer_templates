@@ -11,6 +11,7 @@ services:
       - "8080"    
     networks:
       - frontproxy_default
+      - default
     environment:
       - VIRTUAL_HOST=${PROJECT_URL}
       - LETSENCRYPT_HOST=${PROJECT_URL}
@@ -31,6 +32,7 @@ services:
       - "80"  
     networks:
       - frontproxy_default
+      - default
 
   mariadb:
     container_name: mariadb.database.${PROJECT_NAME}-sloppy.sloopy.node.intern
@@ -49,4 +51,5 @@ services:
       
 networks:
   frontproxy_default:
-    external: true
+    external:
+      name: frontproxy_default
