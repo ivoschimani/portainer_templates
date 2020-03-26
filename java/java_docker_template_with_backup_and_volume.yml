@@ -38,7 +38,7 @@ services:
       
   backup:
     container_name: backupclient.backup.${PROJECT_NAME}.sloopy.node.intern
-    image: "lupcom/lupcom-sql-client-dockyard:0.0.6"
+    image: "lupcom/lupcom-sql-client-dockyard:0.0.7"
     restart: unless-stopped
     environment:
       - PMA_HOST=mariadb.database.${PROJECT_NAME}.sloopy.node.intern
