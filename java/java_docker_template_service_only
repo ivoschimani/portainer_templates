@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  service:
+    container_name: ${PROJECT_NAME}.service.${PROJECT_NAME}.sloopy.node.intern
+    image: ${PROJECT_IMAGE}
+    restart: unless-stopped
+    links:
+      - mariadb:mariadb.database.${PROJECT_NAME}.sloopy.node.intern
+    ports:
+      - "8080"    
+    networks:
+      - frontproxy_default
+      - default
+    environment:
+      - VIRTUAL_HOST=${PROJECT_URL}
+      - LETSENCRYPT_HOST=${PROJECT_URL}
+      - LETSENCRYPT_EMAIL=server1-ssl@lupcom.org
+      
+networks:
+  frontproxy_default:
+    external:
+      name: frontproxy_default
