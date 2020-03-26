@@ -2,11 +2,11 @@ version: '2'
 
 services:
   service:
-    container_name: ${PROJECT_NAME}.service.${PROJECT_NAME}-sloppy.sloopy.node.intern
+    container_name: ${PROJECT_NAME}.service.${PROJECT_NAME}.sloopy.node.intern
     image: ${PROJECT_IMAGE}
     restart: unless-stopped
     links:
-      - mariadb:mariadb.database.${PROJECT_NAME}-sloppy.sloopy.node.intern
+      - mariadb:mariadb.database.${PROJECT_NAME}.sloopy.node.intern
     ports:
       - "8080"    
     networks:
@@ -18,16 +18,16 @@ services:
       - LETSENCRYPT_EMAIL=server1-ssl@lupcom.org
       
   admin:
-    container_name: phpmyadmin.admin.${PROJECT_NAME}-sloppy.sloopy.node.intern
+    container_name: phpmyadmin.admin.${PROJECT_NAME}.sloopy.node.intern
     image: "phpmyadmin/phpmyadmin:4.8.3"
     restart: unless-stopped
     environment:
-      - PMA_HOST=mariadb.database.${PROJECT_NAME}-sloppy.sloopy.node.intern
+      - PMA_HOST=mariadb.database.${PROJECT_NAME}.sloopy.node.intern
       - VIRTUAL_HOST=${PROJECT_ADMIN_URL}
       - LETSENCRYPT_HOST=${PROJECT_ADMIN_URL}
       - LETSENCRYPT_EMAIL=server1-ssl@lupcom.org
     links:
-      - mariadb:mariadb.database.${PROJECT_NAME}-sloppy.sloopy.node.intern
+      - mariadb:mariadb.database.${PROJECT_NAME}.sloopy.node.intern
     ports:
       - "80"  
     networks:
@@ -35,7 +35,7 @@ services:
       - default
 
   mariadb:
-    container_name: mariadb.database.${PROJECT_NAME}-sloppy.sloopy.node.intern
+    container_name: mariadb.database.${PROJECT_NAME}.sloopy.node.intern
     image: "mariadb:10.3.7"
     restart: unless-stopped
     environment:
@@ -48,6 +48,8 @@ services:
       - MYSQL_RANDOM_ROOT_PASSWORD=no
     ports:
       - "3306"
+    volumes:
+      - "mariadb_${PROJECT_NAME}:/var/lib/mysql"
       
 networks:
   frontproxy_default:
