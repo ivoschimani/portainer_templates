@@ -5,8 +5,6 @@ services:
     container_name: ${PROJECT_NAME}.service.${PROJECT_NAME}.sloopy.node.intern
     image: ${PROJECT_IMAGE}
     restart: unless-stopped
-    links:
-      - mariadb:mariadb.database.${PROJECT_NAME}.sloopy.node.intern
     ports:
       - "8080"    
     networks:
