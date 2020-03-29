@@ -69,6 +69,25 @@ services:
       - "3306"
     volumes:
       - "mariadb_${PROJECT_NAME}:/var/lib/mysql"
+  
+  filebrowser:
+    container_name: filebrowser.${PROJECT_NAME}.sloopy.node.intern
+    image: "lupcom/cloudcmd:v0.1.2"
+    environment: 
+      - VIRTUAL_HOST=filebrowser.${PROJECT_NAME}.server1.lupnet.de
+      - LETSENCRYPT_HOST=filebrowser.${PROJECT_NAME}.server1.lupnet.de
+      - LETSENCRYPT_EMAIL=server1-ssl@lupcom.org
+      - USERNAME=${FB_USERNAME}
+      - PASSWORD=${FB_PASSWORD}
+    ports:
+      - "8000"   
+    networks:
+      - frontproxy_default
+      - default
+    volumes:
+      - "service_infront-uploader:/data"
+    volumes_from:
+      - "service"
       
 networks:
   frontproxy_default:
