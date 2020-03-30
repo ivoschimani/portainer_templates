@@ -68,7 +68,7 @@ services:
       - frontproxy_default
       - default
     volumes:
-      - "service_infront-uploader:/data"
+      - "service_${PROJECT_NAME}:/data"
     volumes_from:
       - "service"
       
