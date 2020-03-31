@@ -1,0 +1,223 @@
+[
+	{
+		"type": 3,
+		"title": "tomcat",
+		"description": "tomcat",
+		"categories": ["docker"],
+		"platform": "linux",
+		"repository": {
+			"url": "https://github.com/ivoschimani/portainer_templates",
+			"stackfile": "/java/java_docker_template.yml"		
+		},
+		"env": [
+			{
+				"name":"PROJECT_NAME",
+				"label":"Projektname"		
+			},
+			{
+				"name":"PROJECT_IMAGE",
+				"label":"Image auf Docker-Hub"		
+			},	
+			{
+				"name":"PROJECT_URL",
+				"label":"Öffentliche Domain"		
+			},	
+			{
+				"name":"PROJECT_ADMIN_URL",
+				"label":"Öffentliche Domain(PHPMyAdmin)"		
+			},	
+			{
+				"name":"MYSQL_ROOT_PASSWORD",
+				"label":"Rootpasswort MySQL"		
+			},	
+			{
+				"name":"MYSQL_DATABASE",
+				"label":"Datenbankname"		
+			},	
+			{
+				"name":"MYSQL_USER",
+				"label":"Datenbanknutzer"		
+			},	
+			{
+				"name":"MYSQL_PASSWORD",
+				"label":"Datenbankpasswort"		
+			}	
+		]	
+	},
+	{
+		"type": 3,
+		"title": "tomcat with backup",
+		"description": "tomcat with backup",
+		"categories": ["docker"],
+		"platform": "linux",
+		"repository": {
+			"url": "https://github.com/ivoschimani/portainer_templates",
+			"stackfile": "/java/java_docker_template_with_backup.yml"		
+		},
+		"env": [
+			{
+				"name":"PROJECT_NAME",
+				"label":"Projektname"		
+			},
+			{
+				"name":"PROJECT_IMAGE",
+				"label":"Image auf Docker-Hub"		
+			},	
+			{
+				"name":"PROJECT_URL",
+				"label":"Öffentliche Domain"		
+			},	
+			{
+				"name":"PROJECT_ADMIN_URL",
+				"label":"Öffentliche Domain(PHPMyAdmin)"		
+			},	
+			{
+				"name":"MYSQL_ROOT_PASSWORD",
+				"label":"Rootpasswort MySQL"		
+			},	
+			{
+				"name":"MYSQL_DATABASE",
+				"label":"Datenbankname"		
+			},	
+			{
+				"name":"MYSQL_USER",
+				"label":"Datenbanknutzer"		
+			},	
+			{
+				"name":"MYSQL_PASSWORD",
+				"label":"Datenbankpasswort"		
+			}	
+		]	
+	},
+	{
+		"type": 3,
+		"title": "tomcat with backup and volume",
+		"description": "tomcat with backup and volume",
+		"categories": ["docker"],
+		"platform": "linux",
+		"repository": {
+			"url": "https://github.com/ivoschimani/portainer_templates",
+			"stackfile": "/java/java_docker_template_with_backup_and_volume.yml"		
+		},
+		"env": [
+			{
+				"name":"PROJECT_NAME",
+				"label":"Projektname"		
+			},
+			{
+				"name":"PROJECT_IMAGE",
+				"label":"Image auf Docker-Hub"		
+			},	
+			{
+				"name":"PROJECT_URL",
+				"label":"Öffentliche Domain"		
+			},	
+			{
+				"name":"PROJECT_ADMIN_URL",
+				"label":"Öffentliche Domain(PHPMyAdmin)"		
+			},	
+			{
+				"name":"MYSQL_ROOT_PASSWORD",
+				"label":"Rootpasswort MySQL"		
+			},	
+			{
+				"name":"MYSQL_DATABASE",
+				"label":"Datenbankname"		
+			},	
+			{
+				"name":"MYSQL_USER",
+				"label":"Datenbanknutzer"		
+			},	
+			{
+				"name":"MYSQL_PASSWORD",
+				"label":"Datenbankpasswort"		
+			},	
+			{
+				"name":"FB_USERNAME",
+				"label":"Benutzer für Filebrowser"		
+			},	
+			{
+				"name":"FB_PASSWORD",
+				"label":"Passwort für Filebrowser"		
+			}		
+		]	
+	},
+	{
+		"type": 3,
+		"title": "tomcat Service only",
+		"description": "tomcat Service only",
+		"categories": ["docker"],
+		"platform": "linux",
+		"repository": {
+			"url": "https://github.com/ivoschimani/portainer_templates",
+			"stackfile": "/java/java_docker_template_service_only.yml"		
+		},
+		"env": [
+			{
+				"name":"PROJECT_NAME",
+				"label":"Projektname"		
+			},
+			{
+				"name":"PROJECT_IMAGE",
+				"label":"Image auf Docker-Hub"		
+			},	
+			{
+				"name":"PROJECT_URL",
+				"label":"Öffentliche Domain"		
+			}
+		]	
+	},
+	{
+		"type": 3,
+		"title": "tomcat with volume",
+		"description": "tomcat with volume",
+		"categories": ["docker"],
+		"platform": "linux",
+		"repository": {
+			"url": "https://github.com/ivoschimani/portainer_templates",
+			"stackfile": "/java/java_docker_template_with_volume.yml"		
+		},
+		"env": [
+			{
+				"name":"PROJECT_NAME",
+				"label":"Projektname"		
+			},
+			{
+				"name":"PROJECT_IMAGE",
+				"label":"Image auf Docker-Hub"		
+			},	
+			{
+				"name":"PROJECT_URL",
+				"label":"Öffentliche Domain"		
+			},	
+			{
+				"name":"PROJECT_ADMIN_URL",
+				"label":"Öffentliche Domain(PHPMyAdmin)"		
+			},	
+			{
+				"name":"MYSQL_ROOT_PASSWORD",
+				"label":"Rootpasswort MySQL"		
+			},	
+			{
+				"name":"MYSQL_DATABASE",
+				"label":"Datenbankname"		
+			},	
+			{
+				"name":"MYSQL_USER",
+				"label":"Datenbanknutzer"		
+			},	
+			{
+				"name":"MYSQL_PASSWORD",
+				"label":"Datenbankpasswort"		
+			},	
+			{
+				"name":"FB_USERNAME",
+				"label":"Benutzer für Filebrowser"		
+			},	
+			{
+				"name":"FB_PASSWORD",
+				"label":"Passwort für Filebrowser"		
+			}		
+		]	
+	}
+]
