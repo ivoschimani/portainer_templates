@@ -15,6 +15,10 @@
 				"label":"Projektname"		
 			},
 			{
+				"name":"SERVER_NR",
+				"label":"Server Nr."		
+			},
+			{
 				"name":"PROJECT_IMAGE",
 				"label":"Image auf Docker-Hub"		
 			},	
@@ -60,6 +64,10 @@
 				"label":"Projektname"		
 			},
 			{
+				"name":"SERVER_NR",
+				"label":"Server Nr."		
+			},
+			{
 				"name":"PROJECT_IMAGE",
 				"label":"Image auf Docker-Hub"		
 			},	
@@ -103,6 +111,10 @@
 			{
 				"name":"PROJECT_NAME",
 				"label":"Projektname"		
+			},
+			{
+				"name":"SERVER_NR",
+				"label":"Server Nr."		
 			},
 			{
 				"name":"PROJECT_IMAGE",
@@ -181,6 +193,10 @@
 			{
 				"name":"PROJECT_NAME",
 				"label":"Projektname"		
+			},
+			{
+				"name":"SERVER_NR",
+				"label":"Server Nr."		
 			},
 			{
 				"name":"PROJECT_IMAGE",

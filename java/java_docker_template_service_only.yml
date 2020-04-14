@@ -13,7 +13,7 @@ services:
     environment:
       - VIRTUAL_HOST=${PROJECT_URL}
       - LETSENCRYPT_HOST=${PROJECT_URL}
-      - LETSENCRYPT_EMAIL=server1-ssl@lupcom.org
+      - LETSENCRYPT_EMAIL=server-ssl@lupcom.org
       
 networks:
   frontproxy_default:
