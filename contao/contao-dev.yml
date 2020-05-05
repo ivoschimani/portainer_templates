@@ -3,7 +3,7 @@ version: '2'
 services:
   service:
     container_name: ${PROJECT_NAME}.service.contao
-    image: digiwerft-registry.sloppy-agile.com/contao-docker/contao-dev-container:${contao_version}
+    image: digiwerft-registry.sloppy-agile.com/contao-docker/contao-dev-container:${CONTAO_VERSION}
     restart: unless-stopped
     environment:
       - VIRTUAL_HOST=${PROJECT_NAME}.server${SERVER_NR}.lupnet.de
