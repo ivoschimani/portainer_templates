@@ -235,5 +235,42 @@
 				"label":"Passwort für Filebrowser"		
 			}		
 		]	
+	},
+	{
+		"type": 3,
+		"title": "contao dev",
+		"description": "contao dev",
+		"categories": ["docker"],
+		"platform": "linux",
+		"repository": {
+			"url": "https://github.com/ivoschimani/portainer_templates",
+			"stackfile": "/contao/contao-dev.yml"		
+		},
+		"env": [
+			{
+				"name":"PROJECT_NAME",
+				"label":"Projektname"		
+			},
+			{
+				"name":"SERVER_NR",
+				"label":"Server Nr."		
+			},
+			{
+				"name":"CONTAO_VERSION",
+				"label":"Verwendete Contao Version"		
+			},	
+			{
+				"name":"REPOSITORY",
+				"label":"Repository URL"		
+			},	
+			{
+				"name":"USER",
+				"label":"Benutzername"		
+			},	
+			{
+				"name":"PASSWORD",
+				"label":"Passwort"		
+			}
+		]	
 	}
 ]
