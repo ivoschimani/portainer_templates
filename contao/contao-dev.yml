@@ -84,7 +84,7 @@ services:
       
   code-server:
     container_name: ${PROJECT_NAME}.code-server.contao
-    image: "digiwerft-registry.sloppy-agile.com/dev-env/code-server:v0.1.1" 
+    image: "digiwerft-registry.sloppy-agile.com/dev-env/code-server:v0.1.2" 
     restart: unless-stopped
     ports:
       - "8443"
