@@ -63,7 +63,7 @@ services:
       - "3306"
       
   filebrowser:
-    container_name: rostock-dev.filebrowser.contao
+    container_name: ${PROJECT_NAME}.filebrowser.contao
     image: "lupcom/cloudcmd:v0.1.2"
     restart: unless-stopped
     environment: 
