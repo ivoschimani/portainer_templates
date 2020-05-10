@@ -3,7 +3,7 @@ version: '2'
 services:
   service:
     container_name: ${PROJECT_NAME}.service.contao
-    image: digiwerft-registry.sloppy-agile.com/contao-docker/contao-dev-container:latest
+    image: registry.gitlab.lupcom.de/contao-docker/contao-dev-container:latest
     restart: unless-stopped
     environment:
       - VIRTUAL_HOST=${PROJECT_NAME}.server${SERVER_NR}.lupnet.de
@@ -65,7 +65,7 @@ services:
       
   filebrowser:
     container_name: ${PROJECT_NAME}.filebrowser.contao
-    image: "lupcom/cloudcmd:v0.1.2"
+    image: lupcom/cloudcmd:v0.1.2
     restart: unless-stopped
     environment: 
       - VIRTUAL_HOST=filebrowser.${PROJECT_NAME}.server${SERVER_NR}.lupnet.de
@@ -76,7 +76,7 @@ services:
     ports:
       - "8000"
     volumes:
-      - "service_${PROJECT_NAME}:/data" 
+      - service_${PROJECT_NAME}:/data 
     networks:
       - frontproxy_default
       - default
@@ -85,7 +85,7 @@ services:
       
   code-server:
     container_name: ${PROJECT_NAME}.code-server.contao
-    image: "digiwerft-registry.sloppy-agile.com/dev-env/code-server:v0.1.3" 
+    image: registry.gitlab.lupcom.de/dev-env/code-server:latest
     restart: unless-stopped
     ports:
       - "8443"
@@ -98,7 +98,7 @@ services:
       - PGID=1000
       - TZ=Europe/Berlin
     volumes:
-      - "service_${PROJECT_NAME}:/config/workspace/" 
+      - service_${PROJECT_NAME}:/config/workspace/
     networks:
       - frontproxy_default
       - default
