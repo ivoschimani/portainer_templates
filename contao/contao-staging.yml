@@ -3,7 +3,7 @@ version: '2'
 services:
   service:
     container_name: ${PROJECT_NAME}.service.contao
-    image: registry.gitlab.lupcom.de/contao-docker/contao-dev-container:latest
+    image: registry.gitlab.lupcom.de/contao-docker/contao-staging-container:latest
     restart: unless-stopped
     environment:
       - VIRTUAL_HOST=${PROJECT_NAME}.server${SERVER_NR}.lupnet.de
