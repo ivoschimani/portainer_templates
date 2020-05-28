@@ -15,7 +15,7 @@ services:
     environment:
       - VIRTUAL_HOST=${PROJECT_URL}
       - LETSENCRYPT_HOST=${PROJECT_URL}
-      - LETSENCRYPT_EMAIL=server1-ssl@lupcom.org
+      - LETSENCRYPT_EMAIL=server-ssl@lupcom.org
       
   admin:
     container_name: phpmyadmin.admin.${PROJECT_NAME}.sloopy.node.intern
@@ -25,7 +25,7 @@ services:
       - PMA_HOST=mariadb.database.${PROJECT_NAME}.sloopy.node.intern
       - VIRTUAL_HOST=${PROJECT_ADMIN_URL}
       - LETSENCRYPT_HOST=${PROJECT_ADMIN_URL}
-      - LETSENCRYPT_EMAIL=server1-ssl@lupcom.org
+      - LETSENCRYPT_EMAIL=server-ssl@lupcom.org
     links:
       - mariadb:mariadb.database.${PROJECT_NAME}.sloopy.node.intern
     ports:

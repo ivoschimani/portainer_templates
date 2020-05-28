@@ -15,10 +15,6 @@
 				"label":"Projektname"		
 			},
 			{
-				"name":"SERVER_NR",
-				"label":"Server Nr."		
-			},
-			{
 				"name":"PROJECT_IMAGE",
 				"label":"Image auf Docker-Hub"		
 			},	
